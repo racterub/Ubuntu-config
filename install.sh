@@ -77,17 +77,8 @@ if $DOTFILE; then
     git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim/
     vim +PluginInstall +qall
     #Install tmux-memory-status
-    git clone https://github.com/thewtex/tmux-mem-cpu-load.git ~/.tmux
-    cd ~/.tmux
-    git reset --hard 75b9ea7
-    git submodule init
-    git submodule update
-    cd vendor/tmux-mem-cpu-load/common
-    rm memory.cc
-    rm main.cc
-    wget #<url> 
-    wget #<url>
-    cd ../
+    git clone https://github.com/racterub/tmux-mem-cpu-load.git ~/.tmux
+    cd ~/.tmux/
     cmake .
     sudo make
     sudo make install
