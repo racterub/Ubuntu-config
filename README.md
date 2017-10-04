@@ -12,7 +12,7 @@ Ubuntu-config
 - z3
     - [REPO](https://github.com/Z3Prover/z3)
 - gdb
-    - scwuaptx's PEDA & Pwngdb [PEDA REPO](https://github.com/scwuaptx/peda) [Pwngdb REPO](https://github.com/scwuaptx/Pwngdb)
+    - scwuaptx's PEDA & Pwngdb ([PEDA REPO](https://github.com/scwuaptx/peda)) ([Pwngdb REPO](https://github.com/scwuaptx/Pwngdb))
 - Pwntools
     - [REPO](https://github.com/Gallopsled/Pwntools)
 - qira
