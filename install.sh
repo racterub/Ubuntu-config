@@ -21,7 +21,6 @@ function ask()
 
 ask UPGRADE "Update & upgrade every thing? (y/n): "
 ask DOTFILE "Using Modified Dotfile? [including tons of plugins] (y/n): "
-ask CTF "Deploy CTF environment? (y/n): "
 
 if $UPGRADE; then
     echo "+==========================+"
@@ -47,7 +46,6 @@ if $DOTFILE; then
     cp ./.vimrc ~/
     cp ./.tmux.conf ~/
     cp ./.screenrc ~/
-    cp ./.gdbinit ~/
 
     #Compile vim from source
     sudo apt-get install -y libncurses5-dev libgnome2-dev libgnomeui-dev \
@@ -92,6 +90,14 @@ if $DOTFILE; then
     sudo make
     sudo make install
 
+    #Install nodejs 6.x
+    curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+    sudo apt-get install -y nodejs
+
+    #Install hexo-cli
+    sudo npm install hexo-cli -g
+
+
 
     #cp -r .tmux/ ~/
     #cd ~/.tmux/vendor/tmux-mem-cpu-load/
@@ -100,59 +106,7 @@ if $DOTFILE; then
 fi
 
 if $CTF; then
-    echo "+==============================+"
-    echo "|Deploying CTF environment.... |"
-    echo "+==============================+"
-    
-    #Install multi-arch
-    sudo dpkg --add-architecture i386
-    sudo apt-get update
-    sudo apt-get install -y gcc-multilib
-    
-    #Install angr
-    sudo apt-get -y install python-dev libffi-dev build-essential virtualenvwrapper
-    sudo pip install angr --upgrade
-
-    #Install binwalk,ltrace,strace,nmap
-    sudo apt-get install -y binwalk nmap strace ltrace
-    
-    #Install z3
-    cd ~/
-    git clone https://github.com/Z3Prover/z3.git
-    cd z3/
-    sudo python scripts/mk_make.py --python
-    cd build
-    sudo make
-    sudo make install
-    
-    #Install gdb,  angelboy's Pwngdb & gdb-peda
-    sudo apt-get install -y gdb
-    cd ~/
-    git clone https://github.com/scwuaptx/peda.git ~/.peda/
-    git clone https://github.com/scwuaptx/Pwngdb.git ~/.pwngdb/
-    echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope
-    cp ~/.peda/.inputrc ~/
-    
-    #Install pwntools
-    sudo apt-get install -y git python-pip
-    cd ~/
-    git clone https://github.com/Gallopsled/pwntools.git
-    cd pwntools
-    sudo pip install -r requirements.txt
-    cd ~/
-    git clone https://github.com/aquynh/capstone.git
-    cd capstone/
-    ./make.sh
-    sudo ./make.sh install
-    
-    #Install qira
-    cd ~/
-    wget -qO- https://github.com/BinaryAnalysisPlatform/qira/archive/v1.2.tar.gz | tar zx && mv qira* qira
-    cd qira/
-    sudo pip install -r requirements.txt
-    sudo ./install.sh
-    sudo ./fetchlibs.sh
-fi
+    curl 
 
 echo "===================================="
 echo "|        Installation Done         |"

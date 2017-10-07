@@ -4,6 +4,7 @@ Ubuntu-config
 ## TOOLS
 - tmux w/ customize settings
 - vim w/ powerline
+- hexo-cli
 - angr
 - binwalk
 - strace
