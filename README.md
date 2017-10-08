@@ -25,5 +25,11 @@ Ubuntu-config
 ### Using Different theme
 `prefix + space`
 
+## Installation
+```
+git clone https://github.com/racterub/Ubuntu-config.git
+cd Ubuntu-config/
+./install.sh
+```
 
 
