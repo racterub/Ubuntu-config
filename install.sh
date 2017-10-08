@@ -105,9 +105,6 @@ if $DOTFILE; then
     #sudo make install
 fi
 
-if $CTF; then
-    curl 
-
 echo "===================================="
 echo "|        Installation Done         |"
 echo "===================================="
