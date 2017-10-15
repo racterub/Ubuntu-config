@@ -8,6 +8,12 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
+
+export WORKON_HOME=~/.venv
+export VIRTUALENVWRAPPER_PYTHON=`which python3`
+source /usr/local/bin/virtualenvwrapper.sh
+source /usr/local/bin/virtualenvwrapper_lazy.sh
+
 # enable bash-complete
 if [ -r /etc/bash_completion ]; then
   . /etc/bash_completion
