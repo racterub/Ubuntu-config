@@ -46,6 +46,7 @@ if $DOTFILE; then
     cp ./.vimrc ~/
     cp ./.tmux.conf ~/
     cp ./.screenrc ~/
+    cp ./.editorconfig ~/
 
     #Compile vim from source
     sudo apt-get install -y libncurses5-dev libgnome2-dev libgnomeui-dev \
@@ -87,7 +88,7 @@ if $DOTFILE; then
     cmake .
     sudo make
     sudo make install
-
+    
     #Install nodejs 6.x
     curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
     sudo apt-get install -y nodejs
