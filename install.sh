@@ -38,8 +38,7 @@ if $DOTFILE; then
     echo "+===========================================+"
     
     #Install essentials
-    sudo apt-get install -y build-essential cmake python-dev python-setuptools git bash-completion
-    sudo easy_install pip
+    sudo apt-get install -y build-essential cmake python-dev python-pip python3-pip git bash-completion
 
     #Overwrite Dotfile
     cp ./.bashrc ~/
@@ -88,6 +87,9 @@ if $DOTFILE; then
     cmake .
     sudo make
     sudo make install
+   
+    #Install python3 virtualenv virtualenvwrapper
+    sudo pip3 install virtualenv virtualenvwrapper
     
     #Install nodejs 6.x
     curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
