@@ -88,9 +88,10 @@ if $DOTFILE; then
     sudo make
     sudo make install
    
-    #Install python3 virtualenv virtualenvwrapper
+    #Install python2/3 virtualenv virtualenvwrapper
     sudo pip3 install virtualenv virtualenvwrapper
-    
+    sudo pip install virtualenv virtualenvwrapper
+
     #Install nodejs 6.x
     curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
     sudo apt-get install -y nodejs
@@ -98,12 +99,6 @@ if $DOTFILE; then
     #Install hexo-cli
     sudo npm install hexo-cli -g
 
-
-
-    #cp -r .tmux/ ~/
-    #cd ~/.tmux/vendor/tmux-mem-cpu-load/
-    #sudo make
-    #sudo make install
 fi
 
 echo "===================================="
