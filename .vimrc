@@ -41,7 +41,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vectorstorm/vim-csyn'
 Plugin 'SirVer/ultisnips'
-Plugin 'klen/python-mode'
+Plugin 'racterub/python2-mode'
 Plugin 'editorconfig/editorconfig-vim'
 
 "Plugin 'AutoComplPop'
