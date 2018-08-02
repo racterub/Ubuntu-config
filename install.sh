@@ -54,7 +54,8 @@ if $DOTFILE; then
     python3-dev ruby-dev lua5.1 lua5.1-dev libperl-dev git
     sudo apt-get remove -y vim vim-runtime
     cd ~/
-    git clone https://github.com/vim/vim.git
+    #Set a specific version
+    git clone https://github.com/racterub/vim.git
     cd ~/vim/
     ./configure --with-features=huge \
             --enable-multibyte \
@@ -71,29 +72,28 @@ if $DOTFILE; then
     sudo update-alternatives --set editor /usr/bin/vim
     sudo update-alternatives --install /usr/bin/vi vi /usr/bin/vim 1
     sudo update-alternatives --set vi /usr/bin/vim
-    
+
     #Install POWERLINE
     sudo apt-get install -y powerline
     #Install powerline-status
     sudo pip install powerline-status
-    
+
     #Install vim plugins
     git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim/
     vim +PluginInstall +qall
-    
+
     #Install tmux-memory-status
     git clone https://github.com/racterub/tmux-mem-cpu-load.git ~/.tmux
     cd ~/.tmux/
     cmake .
     sudo make
     sudo make install
-   
-    #Install python2/3 virtualenv virtualenvwrapper
-    sudo pip3 install virtualenv virtualenvwrapper
-    sudo pip install virtualenv virtualenvwrapper
 
-    #Install nodejs 6.x
-    curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+
+    sudo pip3 install virtualenv virtualenvwrapper
+
+    #bump to version 8
+    curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
     sudo apt-get install -y nodejs
 
     #Install hexo-cli
