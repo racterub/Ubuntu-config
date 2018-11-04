@@ -92,12 +92,8 @@ if $DOTFILE; then
 
     sudo pip3 install virtualenv virtualenvwrapper
 
-    #bump to version 8
     curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
     sudo apt-get install -y nodejs
-
-    #Install hexo-cli
-    sudo npm install hexo-cli -g
 
 fi
 
