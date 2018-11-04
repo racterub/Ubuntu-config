@@ -36,7 +36,7 @@ if $DOTFILE; then
     echo "+===========================================+"
     echo "|Deploying Dotfile & Installing plugins.....|"
     echo "+===========================================+"
-    
+
     #Install essentials
     sudo apt-get install -y build-essential cmake python-dev python-pip python3-pip git bash-completion
 
