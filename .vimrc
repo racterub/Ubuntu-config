@@ -3,9 +3,9 @@ set nocompatible
 
 " powerline
 set rtp+=usr/local/lib/python2.7/dist-packages/powerline/bindings/vim
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
+python3 from powerline.vim import setup as powerline_setup
+python3 powerline_setup()
+python3 del powerline_setup
 
 " Setting up Vundle - the vim plugin bundler
 let iCanHazVundle=1
