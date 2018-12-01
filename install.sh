@@ -73,8 +73,6 @@ if $DOTFILE; then
     sudo update-alternatives --install /usr/bin/vi vi /usr/bin/vim 1
     sudo update-alternatives --set vi /usr/bin/vim
 
-    #Install POWERLINE
-    sudo apt-get install -y powerline
     #Install powerline-status
     sudo pip install powerline-status
 

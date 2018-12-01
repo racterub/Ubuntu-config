@@ -3,9 +3,9 @@ set nocompatible
 
 " powerline
 set rtp+=usr/local/lib/python2.7/dist-packages/powerline/bindings/vim
-python3 from powerline.vim import setup as powerline_setup
-python3 powerline_setup()
-python3 del powerline_setup
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
 
 " Setting up Vundle - the vim plugin bundler
 let iCanHazVundle=1
@@ -41,7 +41,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vectorstorm/vim-csyn'
 Plugin 'SirVer/ultisnips'
-Plugin 'racterub/python2-mode'
+Plugin 'python-mode/python-mode'
 Plugin 'editorconfig/editorconfig-vim'
 
 "Plugin 'AutoComplPop'
