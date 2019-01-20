@@ -54,18 +54,19 @@ if $DOTFILE; then
     python3-dev ruby-dev lua5.1 lua5.1-dev libperl-dev git
     sudo apt-get remove -y vim vim-runtime
     cd ~/
-    #Set a specific version
-    git clone https://github.com/racterub/vim.git
+    git clone https://github.com/vim/vim.git
     cd ~/vim/
+    PYTHON2_CONFIG_DIR=$(find /usr -type d -name 'config*' | grep python2 | grep -v dist-packages)
+    PYTHON3_CONFIG_DIR=$(find /usr -type d -name 'config*' | grep python3 | grep -v dist-packages)
     ./configure --with-features=huge \
             --enable-multibyte \
             --enable-rubyinterp \
-            --enable-pythoninterp \
-            --with-python-config-dir=/usr/lib/python2.7/config-x86_64-linux-gnu \
+            --enable-python3interp \
+            --with-python3-config-dir=${PYTHON3_CONFIG_DIR} \
             --enable-perlinterp \
             --enable-luainterp \
             --enable-gui=gtk2 --enable-cscope --prefix=/usr \
-    sudo make VIMRUNTIMEDIR=/usr/share/vim/vim80
+    sudo make VIMRUNTIMEDIR=/usr/share/vim/vim81
     sudo make install
     sudo apt-get install -y vim-runtime
     sudo update-alternatives --install /usr/bin/editor editor /usr/bin/vim 1
@@ -74,7 +75,8 @@ if $DOTFILE; then
     sudo update-alternatives --set vi /usr/bin/vim
 
     #Install powerline-status
-    sudo pip install powerline-status
+    #Install with python version 3 to prevent pyhon2 EOL 
+    sudo pip3 install powerline-status
 
     #Install vim plugins
     git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim/
