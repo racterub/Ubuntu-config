@@ -77,7 +77,7 @@ if $DOTFILE; then
     #Install powerline-status
     #Install with python version 3 to prevent pyhon2 EOL 
     sudo pip3 install powerline-status
-    sudo apt install fonts-powerline powerline
+    sudo apt-get install -y fonts-powerline powerline
 
     #Install vim plugins
     git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim/
